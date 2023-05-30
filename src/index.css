@@ -39,7 +39,7 @@
 
 @layer utilities {
   .container {
-    @apply px-4 py-8
+    @apply px-4 py-10
   }
   .press {
     @apply transition-all duration-300 ease-in-out active:scale-90 cursor-pointer

@@ -11,7 +11,7 @@ const Projects = () => {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nam repudiandae esse incidunt velit blanditiis consectetur deleniti aspernatur officiis non!
         </p>
       </div>
-      <div className='my-10 grid grid-cols-1 gap-6'>
+      <div className='mt-12 mb-10 grid grid-cols-1 gap-6'>
         <ProjectCard 
           img={profile}
           title='Massbeat - Aplikasi Workout dan Konsultasi Trainer'

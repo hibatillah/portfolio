@@ -6,7 +6,7 @@ import { profile } from "../assets";
 const Home = () => {
   return (
     <main className="container font-outfit relative">
-      <div className="absolute left-4 -top-28 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl">
+      <div className="absolute left-4 -top-20 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl">
         <img
           src={profile}
           alt="profile"

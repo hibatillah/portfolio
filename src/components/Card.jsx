@@ -26,7 +26,7 @@ export const ProjectCard = ({ img, title, desc, time, url }) => {
         </div>
       </div>
       <Link to={`/project/${url}`}>
-        <div className="px-4 py-3 border-t border-grey-dark text-end text-sm text-dark">
+        <div className="px-4 py-3 border-t border-grey-dark text-end text-sm text-dark md:text-base">
           View Project
         </div>
       </Link>

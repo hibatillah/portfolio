@@ -1,5 +1,11 @@
 [
   {
+    "title": "Font Awesome",
+    "link": "https://fontawesome.com",
+    "icon": "assets/bookmarks/fontawesome.png",
+    "label": ["icons"]
+  },
+  {
     "title": "dribbble.com",
     "link": "https://dribbble.com/",
     "icon": "assets/bookmarks/dribbble.png",
@@ -100,12 +106,6 @@
     "link": "https://feathericons.com",
     "icon": "assets/bookmarks/feather-icon.png",
     "label": ["icons"]
-  },
-  {
-    "title": "Font Awesome",
-    "link": "https://fontawesome.com",
-    "icon": "assets/bookmarks/fontawesome.png",
-    "label": ["icons", "illustrations"]
   },
   {
     "title": "Iconsax",

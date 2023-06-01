@@ -10,15 +10,15 @@ const Bio = () => {
   };
 
   return (
-    <ul className="rounded-lg border border-grey-dark p-4 space-y-4">
+    <ul className="h-fit rounded-lg border border-grey-dark p-4 space-y-4">
       {Object.entries(info).map(([key, item], index) => (
         <li key={index}>
-          <div className="text-grey-dark text-sm capitalize">{key}</div>
+          <div className="text-grey-dark text-sm capitalize md:text-base">{key}</div>
           {item.includes("Riau") ? (
-            <div className="text-primary font-semibold">{item}</div>
+            <div className="text-primary font-semibold md:text-lg">{item}</div>
           ) : (
             <a href={item.includes('pcr') ? `mailto:${item}` : item} target="_blank" rel="noopener noreferrer">
-              <div className="text-primary font-semibold flex gap-2 items-center">
+              <div className="text-primary font-semibold flex gap-2 items-center md:text-lg md:gap-3">
                 {item.replace("https://", "")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

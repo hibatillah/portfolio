@@ -17,7 +17,7 @@
     @apply text-xl
   }
   p {
-    @apply text-grey-dark
+    @apply text-grey-dark md:text-lg
   }
   main {
     @apply min-h-[calc(100dvh-264px)]
@@ -30,10 +30,10 @@
 @layer components {
   /* button */
   .btn {
-    @apply w-full flex-auto flex justify-center items-center px-4 py-2 rounded-lg press
+    @apply w-full flex-auto flex justify-center items-center px-4 py-2 rounded-lg press md:py-3 md:rounded-xl md:text-lg
   }
   .btn-primary {
-    @apply bg-primary text-white
+    @apply bg-primary text-white shadow-lg shadow-primary/30
   }
   .btn-secondary {
     @apply text-primary border border-primary
@@ -42,7 +42,7 @@
 
 @layer utilities {
   .container {
-    @apply px-4 py-6
+    @apply px-4 py-6 lg:px-12
   }
   .press {
     @apply transition-all duration-300 ease-in-out active:scale-90 cursor-pointer

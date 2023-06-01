@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BookmarkCard } from "../components";
+import { Bio, BookmarkCard } from "../components";
 import { bookmarks } from "../db";
 
 const Label = ({ name, active }) => {
   return (
     <div
-      className={`w-fit px-3 py-1.5 text-sm border border-grey-dark rounded-lg cursor-pointer select-none ${
+      className={`w-fit px-3 py-1.5 text-sm border border-grey-dark rounded-lg cursor-pointer select-none md:text-base md:px-4 ${
         active
           ? "bg-primary text-white border-primary shadow-lg shadow-primary/30"
           : "text-primary border-grey-dark bg-white"
@@ -49,35 +49,43 @@ const Bookmarks = () => {
   );
 
   return (
-    <main className="container font-outfit">
-      <div>
-        <h1>Bookmarks</h1>
-        <p className="mt-3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          nam repudiandae esse incidunt velit blanditiis consectetur deleniti
-          aspernatur officiis non!
-        </p>
-        {/* label */}
-        <ul className="flex flex-wrap gap-3 mt-5">
-          {labels.map((item, i) => (
-            <li key={i} onClick={() => handleActive(item)}>
-              <Label name={item} active={item === activeLabel} />
-            </li>
+    <main className="container font-outfit lg:grid lg:grid-cols-3 lg:gap-12">
+      <div className="lg:col-span-2">
+        <div>
+          <h1>Bookmarks</h1>
+          <p className="mt-3 md:mt-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            nam repudiandae esse incidunt velit blanditiis consectetur deleniti
+            aspernatur officiis non!
+          </p>
+          <ul className="flex flex-wrap gap-3 mt-5 md:w-3/4 md:mt-8 lg:hidden">
+            {labels.map((item, i) => (
+              <li key={i} onClick={() => handleActive(item)}>
+                <Label name={item} active={item === activeLabel} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* bookmarks by label */}
+        <div className="my-10 grid grid-cols-1 gap-5 md:grid-cols-2 md:mt-16 lg:mt-10">
+          {filteredBookmarks?.map((item, i) => (
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <BookmarkCard
+                img={item.icon}
+                title={item.title}
+                label={item.label}
+              />
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
-      {/* bookmarks by label */}
-      <div className="mt-12 mb-10 grid grid-cols-1 gap-5">
-        {filteredBookmarks?.map((item, i) => (
-          <a href={item.link} target="_blank" rel="noopener noreferrer">
-            <BookmarkCard
-              img={item.icon}
-              title={item.title}
-              label={item.label}
-            />
-          </a>
+      <ul className="hidden lg:h-fit lg:flex lg:flex-wrap lg:gap-3 lg:mt-12">
+        {labels.map((item, i) => (
+          <li key={i} onClick={() => handleActive(item)} className="h-fit">
+            <Label name={item} active={item === activeLabel} />
+          </li>
         ))}
-      </div>
+      </ul>
     </main>
   );
 };

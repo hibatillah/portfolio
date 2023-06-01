@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Bio, EduCard, Banner } from "../components";
-import { profile } from "../assets";
+import { profile, pcr, imsya } from "../assets";
 
 const Home = () => {
   useEffect(() => {
-    document.title = 'Hibatillah'
-  },[])
-  
+    document.title = "Hibatillah";
+  }, []);
+
   return (
     <main className="container font-outfit relative">
       <div className="absolute left-4 -top-16 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl">
@@ -67,20 +67,32 @@ const Home = () => {
       </div>
       <Bio />
       {/* edu history */}
-      <div className="my-10 space-y-4">
+      <div className="my-10 flex flex-col gap-4">
         <h3 className="text-dark font-semibold">Education</h3>
-        <EduCard
-          img={profile}
-          title="Politeknik Caltex Riau"
-          desc="Diploma 4 - Sistem Informasi"
-          time="2021 - present"
-        />
-        <EduCard
-          img={profile}
-          title="SMA IT Imam Syafi'i 2 Pekanbaru"
-          desc="Kejuruan IPA"
-          time="2018 - 2021"
-        />
+        <a
+          href="https://www.instagram.com/politeknikcaltexriau/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <EduCard
+            img={pcr}
+            title="Politeknik Caltex Riau"
+            desc="Diploma 4 - Sistem Informasi"
+            time="2021 - present"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/imam_syafii_2_pekanbaru/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <EduCard
+            img={imsya}
+            title="SMA IT Imam Syafi'i 2 Pekanbaru"
+            desc="Kejuruan IPA"
+            time="2018 - 2021"
+          />
+        </a>
       </div>
       {/* skill */}
       <div className="my-10 space-y-3">

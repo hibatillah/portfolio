@@ -68,7 +68,7 @@ const Bookmarks = () => {
       </div>
       {/* bookmarks by label */}
       <div className="mt-12 mb-10 grid grid-cols-1 gap-5">
-        {filteredBookmarks.map((item, i) => (
+        {filteredBookmarks?.map((item, i) => (
           <a href={item.link} target="_blank" rel="noopener noreferrer">
             <BookmarkCard
               img={item.icon}

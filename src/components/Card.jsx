@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const EduCard = ({ img, title, desc, time }) => {
   return (
     <div className="flex gap-5 p-4 rounded-lg border border-grey-dark cursor-pointer press">
-      <img src={img} alt="thumbnail" className="w-10 h-10 rounded-xl" />
+      <img src={img} alt="thumbnail" className="w-10 h-10 object-contain rounded-xl" />
       <div>
         <h4 className="text-lg text-primary font-medium">{title}</h4>
         <p>{desc}</p>

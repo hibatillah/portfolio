@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ProjectCard } from '../components';
 import { profile } from "../assets";
 
 const Projects = () => {
+  useEffect(() => {
+    document.title = "Hibatillah's Projects"
+  },[])
+  
   return (
     <main className="container font-outfit">
       <div>
@@ -11,6 +15,7 @@ const Projects = () => {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nam repudiandae esse incidunt velit blanditiis consectetur deleniti aspernatur officiis non!
         </p>
       </div>
+      {/* project list */}
       <div className='mt-12 mb-10 grid grid-cols-1 gap-6'>
         <ProjectCard 
           img={profile}

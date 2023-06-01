@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Bio, EduCard, Banner } from "../components";
 import { profile } from "../assets";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Hibatillah'
+  },[])
+  
   return (
     <main className="container font-outfit relative">
-      <div className="absolute left-4 -top-20 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl">
+      <div className="absolute left-4 -top-16 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl">
         <img
           src={profile}
           alt="profile"
@@ -17,6 +21,7 @@ const Home = () => {
         <h1>M. Hibatillah Hasanin</h1>
         <h3 className="text-grey-dark">Habib</h3>
       </div>
+      {/* cta */}
       <div className="flex gap-4 mt-5">
         <Link to="/projects" className="btn btn-secondary">
           View portfolio
@@ -61,6 +66,7 @@ const Home = () => {
         </p>
       </div>
       <Bio />
+      {/* edu history */}
       <div className="my-10 space-y-4">
         <h3 className="text-dark font-semibold">Education</h3>
         <EduCard
@@ -76,6 +82,7 @@ const Home = () => {
           time="2018 - 2021"
         />
       </div>
+      {/* skill */}
       <div className="my-10 space-y-3">
         <h3 className="text-dark font-semibold">Skill</h3>
         <div className="flex flex-wrap gap-x-3 gap-y-4">

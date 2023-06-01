@@ -19,6 +19,9 @@
   p {
     @apply text-grey-dark
   }
+  main {
+    @apply min-h-[calc(100dvh-264px)]
+  }
   ::-webkit-scrollbar {
     @apply w-0 lg:w-2;
   }
@@ -27,7 +30,7 @@
 @layer components {
   /* button */
   .btn {
-    @apply w-full flex-auto flex justify-center items-center px-4 py-2 rounded-lg
+    @apply w-full flex-auto flex justify-center items-center px-4 py-2 rounded-lg press
   }
   .btn-primary {
     @apply bg-primary text-white

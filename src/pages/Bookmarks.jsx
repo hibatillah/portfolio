@@ -1,44 +1,53 @@
 import React, { useEffect, useState } from "react";
+import { BookmarkCard } from "../components";
+import { bookmarks } from "../db";
 
-const Label = () => {
-  const labels = [
-    "inspirations",
-    "icons",
-    "illustrations",
-    "fonts",
-    "colors",
-    "photos",
-    "mockups",
-    "patterns",
-  ];
-
-  const [activeLabel, setActiveLabel] = useState("inspirations");
-  const handleActive = (el) => setActiveLabel(el);
-  useEffect(() => {
-    console.log("🚀 ~ file: Bookmarks.jsx:6 ~ activeLabel", activeLabel);
-  },[activeLabel])
-
+const Label = ({ name, active }) => {
   return (
-    <div className="flex flex-wrap gap-3">
-      {labels.map((item, index) => (
-        <div
-          key={index}
-          onClick={() => handleActive(item)}
-          className={`${
-            item === activeLabel
-              ? "bg-primary text-white border-primary"
-              : "text-primary border-grey-light bg-white"
-          }
-            w-fit px-5 py-2 border rounded-xl cursor-pointer select-none`}
-        >
-          {item}
-        </div>
-      ))}
+    <div
+      className={`w-fit px-3 py-1.5 text-sm border border-grey-dark rounded-lg cursor-pointer select-none ${
+        active
+          ? "bg-primary text-white border-primary shadow-lg shadow-primary/30"
+          : "text-primary border-grey-dark bg-white"
+      }`}
+    >
+      {name}
     </div>
   );
 };
 
 const Bookmarks = () => {
+  useEffect(() => {
+    document.title = "Hibatillah's Bookmarks";
+  }, []);
+
+  const labels = [
+    "inspirations",
+    "icons",
+    "illustrations",
+    "patterns",
+    "fonts",
+    "colors",
+    "photos",
+    "mockups",
+    "tools",
+    "plugins",
+    "blogs",
+    "quotes",
+  ];
+
+  // active label
+  const [activeLabel, setActiveLabel] = useState("inspirations");
+  const handleActive = (el) => setActiveLabel(el);
+  useEffect(() => {
+    console.log("🚀 ~ file: Bookmarks.jsx:6 ~ activeLabel", activeLabel);
+  }, [activeLabel]);
+
+  // filter bookmarks by label
+  const filteredBookmarks = bookmarks.filter((item) =>
+    item.label.find((el) => el === activeLabel)
+  );
+
   return (
     <main className="container font-outfit">
       <div>
@@ -48,11 +57,27 @@ const Bookmarks = () => {
           nam repudiandae esse incidunt velit blanditiis consectetur deleniti
           aspernatur officiis non!
         </p>
-        <div className="mt-5">
-          <Label />
-        </div>
+        {/* label */}
+        <ul className="flex flex-wrap gap-3 mt-5">
+          {labels.map((item, i) => (
+            <li key={i} onClick={() => handleActive(item)}>
+              <Label name={item} active={item === activeLabel} />
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="mt-12 mb-10 grid grid-cols-1 gap-6"></div>
+      {/* bookmarks by label */}
+      <div className="mt-12 mb-10 grid grid-cols-1 gap-5">
+        {filteredBookmarks.map((item, i) => (
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <BookmarkCard
+              img={item.icon}
+              title={item.title}
+              label={item.label}
+            />
+          </a>
+        ))}
+      </div>
     </main>
   );
 };

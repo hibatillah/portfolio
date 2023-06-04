@@ -30,7 +30,7 @@
 @layer components {
   /* button */
   .btn {
-    @apply w-full flex-auto flex justify-center items-center px-4 py-2 rounded-lg press md:py-3 md:rounded-xl md:text-lg
+    @apply w-full flex-auto flex justify-center items-center px-4 py-2 rounded-lg press md:py-3 md:rounded-xl md:text-lg lg:h-fit
   }
   .btn-primary {
     @apply bg-primary text-white shadow-lg shadow-primary/30

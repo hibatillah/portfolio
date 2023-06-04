@@ -10,61 +10,57 @@ const Home = () => {
 
   return (
     <main className="container font-outfit relative">
-      <div className="absolute left-4 -top-16 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl md:left-12">
-        <img
-          src={profile}
-          alt="profile"
-          className="object-cover w-full h-full select-none pointer-events-none"
-        />
-      </div>
-      <div className="mt-12">
-        <h1>M. Hibatillah Hasanin</h1>
-        <h3 className="text-grey-dark">Habib</h3>
-      </div>
-      {/* cta */}
-      <div className="flex gap-4 mt-5">
-        <Link to="/projects" className="btn btn-secondary">
-          View portfolio
-        </Link>
-        <a
-          href="https://instagram.com/hibat.illah"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary"
-        >
-          <div className="flex gap-1 -translate-x-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"
-              />
-            </svg>
-            Follow
-          </div>
-        </a>
+      <div className="lg:flex lg:items-end lg:pb-10 lg:border-b lg:border-grey-dark">
+        <div className="absolute left-4 -top-16 w-28 h-28 overflow-hidden border-4 border-white rounded-full shadow-xl md:left-12">
+          <img
+            src={profile}
+            alt="profile"
+            className="object-cover w-full h-full select-none pointer-events-none"
+          />
+        </div>
+        <div className="mt-12 lg:flex-auto">
+          <h1>M. Hibatillah Hasanin</h1>
+          <h3 className="text-grey-dark">Habib</h3>
+        </div>
+        {/* cta */}
+        <div className="flex gap-4 mt-5 lg:flex-none lg:w-1/3">
+          <Link to="/projects" className="btn btn-secondary">
+            View portfolio
+          </Link>
+          <a
+            href="https://instagram.com/hibat.illah"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            <div className="flex gap-1 -translate-x-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v12m6-6H6"
+                />
+              </svg>
+              Follow
+            </div>
+          </a>
+        </div>
       </div>
       <div className="flex flex-col lg:grid lg:grid-cols-3 lg:gap-12 lg:mt-8">
         <div className="lg:order-1 lg:col-span-2">
           <div className="my-10 space-y-3 order-1">
             <h3 className="text-dark font-semibold">About</h3>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora,
-              maiores. Assumenda, minus! Laborum magni maxime corporis, expedita
-              minima libero, optio nostrum explicabo, amet reiciendis enim.
-              Sequi culpa quasi reprehenderit deserunt.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              veritatis natus eos, minima dolorum eius magnam molestiae
-              consectetur fugiat laudantium.
+              Hi i'm a student majoring Information System in Politeknik Caltex
+              Riau, Pekanbaru, Indonesia. I'm passionate on frontend development
+              and love to design.
             </p>
           </div>
           <div className="lg:hidden">

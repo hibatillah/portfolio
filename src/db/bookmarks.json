@@ -54,6 +54,12 @@
     "label": ["icons", "illustrations"]
   },
   {
+    "title": "Realtime Colors",
+    "link": "https://realtimecolors.com/",
+    "icon": "assets/bookmarks/realtimecolors.png",
+    "label": ["colors"]
+  },
+  {
     "title": "The Noun Project",
     "link": "https://thenounproject.com",
     "icon": "assets/bookmarks/noun-projects.png",

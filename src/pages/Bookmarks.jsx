@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bio, BookmarkCard } from "../components";
+import { BookmarkCard } from "../components";
 import { bookmarks } from "../db";
 
 const Label = ({ name, active }) => {
@@ -54,9 +54,9 @@ const Bookmarks = () => {
         <div>
           <h1>Bookmarks</h1>
           <p className="mt-3 md:mt-4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            nam repudiandae esse incidunt velit blanditiis consectetur deleniti
-            aspernatur officiis non!
+            I like to keep a list of interesting and useful resources which can
+            then help me in completing various tasks. Here are some collections
+            of bookmarks that I have saved
           </p>
           <ul className="flex flex-wrap gap-3 mt-5 md:w-3/4 md:mt-8 lg:hidden">
             {labels.map((item, i) => (

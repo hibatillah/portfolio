@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Bio, ProjectCard } from "../components";
-import { profile } from "../assets";
+import { projects } from "../db";
 
 const Projects = () => {
   useEffect(() => {
@@ -13,26 +13,20 @@ const Projects = () => {
         <div>
           <h1>Projects</h1>
           <p className="mt-3 md:mt-4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            nam repudiandae esse incidunt velit blanditiis consectetur deleniti
-            aspernatur officiis non!
+            I like to make projects from various things that have been learned.
+            Here are some projects I've done.
           </p>
         </div>
         {/* project list */}
-        <div className="mt-12 mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <ProjectCard
-            img={profile}
-            title="Massbeat - Aplikasi Workout dan Konsultasi Trainer"
-            desc="UI Designer | Frontend developer"
-            time="2022 - present"
-          />
-          <ProjectCard
-            img={profile}
-            title="TurKita - Aplikasi Pemasaran Wisata dan UMKM"
-            desc="UI Designer | Frontend developer"
-            time="2023 - present"
-          />
-        </div>
+        <ul className="mt-12 mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {projects.map((project, i) => (
+            <li key={i}>
+              <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                <ProjectCard key={i} project={project} />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="hidden lg:block lg:mt-12">
         <Bio />

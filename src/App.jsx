@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Projects, Bookmarks, Unknown } from './pages';
 import { Header } from './components';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />

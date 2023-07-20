@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Projects, Bookmarks, Unknown } from './pages';
-import { Header } from './components';
+import { Header, Footer } from './components';
 
 const App = () => {
   return (
@@ -13,6 +13,7 @@ const App = () => {
         <Route path='/bookmarks' element={<Bookmarks />} />
         <Route path='*' element={<Unknown />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
